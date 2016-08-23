@@ -10,35 +10,41 @@ namespace GenericsLab
 
     {
 
-        private T[] innerArray;
-
+        private T[] internalArray;
+        private T[] internalArrayTwo;
+ 
         //innerArray = new T[0] //creating an internal array
 
         public void AddToList()
         {
-            int[] internalArray = new int[10];
-            int[] internalArrayTwo = new int[11];
-            internalArray[] = internalArrayTwo[];
-
-        public void AddToList() //Method
+            internalArray = new T[0];
+            internalArrayTwo = new T[0];
+        }
+        public void AddObjectToList(string cat) //Method
         {
-            T[] = tempInnerArray = new T[innerArray.Length + 1];
-            for (int i = 0; i < innerArray.Length, i++)
+            T[] tempInnerArray = new T[internalArray.Length + 1]; //creating a new array
+
+            for (int i = 0; i < internalArray.Length; i++)
             {
-                tempInnerArray[i] = innerArray[i];
+                tempInnerArray[i] = internalArray[i]; //passing in values from old array to new array
             }
-            tempInnerArray[innerArray.Length] = thing;
-            innerArray = tempInnerArray;
+            internalArray = tempInnerArray;
         }
-        public void RemoveFromList()
+
+        public void RemoveFromList() //method
         {
-            int[] subtractArray = new int[9];
-            int[] internalArrayThree = int internalArrayTwo[];
+            T[] tempInnerArrayTwo = new T[internalArray.Length - 1];
+            for (int i = 0; i < internalArray.Length; i ++)
+            {
+                tempInnerArrayTwo[i] = internalArray[i];
+            }
+            internalArray = tempInnerArrayTwo;
         }
-        public void PlusOperator()
+
+        public void ConvertToString () //method for converting custom array to a string 
         {
 
         }
-        public void SubtractOperator()
+
     }
 }

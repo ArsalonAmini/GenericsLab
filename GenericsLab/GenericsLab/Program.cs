@@ -29,7 +29,7 @@ namespace GenericsLab
             list2.ConvertToString();
 
             GenericList<int> CombineList = list1 + list2; //calling + operator overide
-
+            GenericList<int> SubtractList = list1 - list2; //calling - operator override 
 
 
             foreach (var item in list1) //display list one items

@@ -60,10 +60,9 @@ namespace GenericsLab
             {
                 yield return internalArray[i]; //returns contents of the array [i]
             }
-            
         }
 
-        public static GenericList<T> operator +(GenericList<T> list1, GenericList<T> list2) //tested not verified by A.Amini-Hajibashi
+        public static GenericList<T> operator +(GenericList<T> list1, GenericList<T> list2) //tested and verified by A.Amini-Hajibashi
         {
             
             GenericList<T> resultList= new GenericList<T>();
@@ -79,7 +78,7 @@ namespace GenericsLab
             return resultList;
         }
 
-        public static GenericList<T> operator -(GenericList<T> list1, GenericList<T> list2)
+        public static GenericList<T> operator -(GenericList<T> list1, GenericList<T> list2) //Tested and verified by A.Amini-Hajibashi
         {
            
             foreach(T item in list1)
@@ -88,7 +87,6 @@ namespace GenericsLab
             }
             return list1;
         }
-
 
         //public GenericList<T> Zipper (GenericList<T> list1, GenericList<T> list2)
         //{

@@ -22,6 +22,7 @@ namespace GenericsLab
         }
 
         public void Add (T itemToAdd) //Tested and verified by A.Amini-Hajibashi on 8/24/2016
+
         {
             T[] tempInnerArray = new T[internalArray.Length + 1]; 
 
@@ -30,8 +31,7 @@ namespace GenericsLab
                 tempInnerArray[i] = internalArray[i]; 
             }
             tempInnerArray[tempInnerArray.Length-1] = itemToAdd;
-            internalArray = tempInnerArray;
-            
+            internalArray = tempInnerArray;  
         }
 
         public void Subtract () //Tested and Verified by A.Amini-Hajibashi on 8/24/2016
@@ -54,15 +54,52 @@ namespace GenericsLab
             return toString;
         }
 
-
         public IEnumerator GetEnumerator() //Tested and Verified by A.Amini-Hajibashi
         {
-            for (int i = 0; i < toString.Length-1; i++)
+            for (int i = 0; i < internalArray.Length; i++)
             {
-                yield return internalArray[i];
+                yield return internalArray[i]; //returns contents of the array [i]
             }
             
         }
+
+        public static GenericList<T> operator +(GenericList<T> list1, GenericList<T> list2) //tested not verified by A.Amini-Hajibashi
+        {
+            
+            GenericList<T> resultList= new GenericList<T>();
+
+            foreach (T item in list1)  
+            {
+                resultList.Add(item);
+            }
+            foreach(T item in list2)
+            {
+                resultList.Add(item);
+            }
+            return resultList;
+        }
+
+        public static GenericList<T> operator -(GenericList<T> list1, GenericList<T> list2)
+        {
+           
+            foreach(T item in list1)
+            {
+                list1 = list2;
+            }
+            return list1;
+        }
+
+
+        //public GenericList<T> Zipper (GenericList<T> list1, GenericList<T> list2)
+        //{
+        //    GenericList<T> zippedResult = new GenericList<T>();
+        //    foreach (T item in list1)
+        //    {
+        //        zippedResult.Add(item);
+        //        zippedResult.Add(item);
+        //    }
+        //    return zippedResult;
+        //}
 
     }
 }

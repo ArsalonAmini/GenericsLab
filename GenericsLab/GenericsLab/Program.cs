@@ -13,23 +13,33 @@ namespace GenericsLab
         {
 
             
-            GenericList<int> genericListInt = new GenericList<int>();
-            genericListInt.Add(5);
-            genericListInt.Add(10);
-            genericListInt.Add(15);
-            genericListInt.Subtract();
-            genericListInt.ConvertToString();
+            GenericList<int> list1 = new GenericList<int>(); //generate list one
+            list1.Add(5);
+            list1.Add(10);
+            list1.Add(15);
+            list1.Subtract();
+            list1.ConvertToString();
 
-            foreach (var item in genericListInt) //Tested and verified by A.Amini-Hajibashi
+            GenericList<int> list2 = new GenericList<int>(); //generate list two
+            list2.Add(4);
+            list2.Add(3);
+            list2.Add(5);
+            list2.Add(1);
+            list2.Subtract();
+            list2.ConvertToString();
+
+            GenericList<int> CombineList = list1 + list2; //calling + operator overide
+
+
+
+            foreach (var item in list1) //display list one items
             {
                 Console.WriteLine(item);
             }
             Console.ReadLine();
 
+           
 
-
-            //TestClass <int> testclass = new TestClass <int>();
-            //testclass.RunTest();
         }
 
     }

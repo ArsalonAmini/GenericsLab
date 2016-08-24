@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace GenericsLab
 {
-    public class GenericList<T>
+    public class GenericList <T>/*: IEnumerable*/ 
 
     {
 
         private T[] internalArray; //declaring variables
         private T[] internalArrayTwo;
- 
+        string toString;
+
         public GenericList()
         {
             internalArray = new T[0]; //assigning variables
@@ -32,21 +34,39 @@ namespace GenericsLab
             
         }
 
-        public void Subtract (T itemToSubtract) //method
+        public void Subtract () //Tested and Verified by A.Amini-Hajibashi on 8/24/2016
         {
             T[] tempInnerArrayTwo = new T[internalArray.Length - 1];
             for (int i = 0; i < internalArray.Length -1 ; i ++)
             {
                 tempInnerArrayTwo[i] = internalArray[i];
             }
-            //tempInnerArrayTwo[tempInnerArrayTwo.Length - 1] = itemToSubtract; //subtract from last object in array
+            
             internalArray = tempInnerArrayTwo;
         }
 
-        public void ConvertToString () //method for converting custom array to a string 
+        public string ConvertToString() //Tested and Verified by A.Amini-Hajibashi on 8/24/2016
         {
-
+            for (int i = 0; i<internalArray.Length; i++)
+            {
+                toString += internalArray[i].ToString();
+            }
+            return toString;
         }
+
+
+        //public IEnumerator GetEnumerator()
+        //{
+        //    for (int i = 0; i <internalArray.Count; i++)
+        //    {
+        //        yield return "";
+        //        yield return "";
+        //        yield return "";
+        //        yield return "";
+        //        yield return "";
+        //    }
+        //    yield return "The End";
+        //}
 
     }
 }

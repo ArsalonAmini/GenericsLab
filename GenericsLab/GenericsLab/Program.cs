@@ -17,20 +17,22 @@ namespace GenericsLab
             genericListInt.Add(5);
             genericListInt.Add(10);
             genericListInt.Add(15);
-            genericListInt.Subtract(5);
-            genericListInt.Subtract(10);
+            genericListInt.Subtract();
+            genericListInt.ConvertToString();
+            
+            
             Console.ReadLine();
+
+            //foreach (var name in genericListInt)
+            //{
+            //    Console.WriteLine();
+            //}
+            //Console.ReadLine();
+
 
 
             //TestClass <int> testclass = new TestClass <int>();
             //testclass.RunTest();
-
-            //IterableClass iterable = new IterableClass();
-            //foreach (var name in iterable)
-            //{
-            //    //method
-            //}
-            //Console.ReadLine();
         }
 
     }

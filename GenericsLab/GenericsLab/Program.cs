@@ -19,15 +19,12 @@ namespace GenericsLab
             genericListInt.Add(15);
             genericListInt.Subtract();
             genericListInt.ConvertToString();
-            
-            
-            Console.ReadLine();
 
-            //foreach (var name in genericListInt)
-            //{
-            //    Console.WriteLine();
-            //}
-            //Console.ReadLine();
+            foreach (var item in genericListInt) //Tested and verified by A.Amini-Hajibashi
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
 
 
 

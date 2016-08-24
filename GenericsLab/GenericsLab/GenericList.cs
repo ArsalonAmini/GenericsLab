@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace GenericsLab
 {
-    public class GenericList <T>/*: IEnumerable*/ 
+    public class GenericList <T> : IEnumerable
 
     {
 
@@ -55,18 +55,14 @@ namespace GenericsLab
         }
 
 
-        //public IEnumerator GetEnumerator()
-        //{
-        //    for (int i = 0; i <internalArray.Count; i++)
-        //    {
-        //        yield return "";
-        //        yield return "";
-        //        yield return "";
-        //        yield return "";
-        //        yield return "";
-        //    }
-        //    yield return "The End";
-        //}
+        public IEnumerator GetEnumerator() //Tested and Verified by A.Amini-Hajibashi
+        {
+            for (int i = 0; i < toString.Length-1; i++)
+            {
+                yield return internalArray[i];
+            }
+            
+        }
 
     }
 }

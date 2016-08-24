@@ -88,16 +88,19 @@ namespace GenericsLab
             return list1;
         }
 
-        //public GenericList<T> Zipper (GenericList<T> list1, GenericList<T> list2)
-        //{
-        //    GenericList<T> zippedResult = new GenericList<T>();
-        //    foreach (T item in list1)
-        //    {
-        //        zippedResult.Add(item);
-        //        zippedResult.Add(item);
-        //    }
-        //    return zippedResult;
-        //}
+        public GenericList<T> Zipper(GenericList<T> list1, GenericList<T> list2)
+        {
+            GenericList<T> zippedResult = new GenericList<T>();
+ 
+            for (int i = 0; i < internalArray.Length; i++)
+
+            {
+                zippedResult.Add(list1.internalArray[i]);
+                zippedResult.Add(list2.internalArray[i]);
+            }
+
+            return zippedResult;
+        }
 
     }
 }

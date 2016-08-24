@@ -17,6 +17,7 @@ namespace GenericsLab
             list1.Add(5);
             list1.Add(10);
             list1.Add(15);
+            list1.Add(7);
             list1.Subtract();
             list1.ConvertToString();
 
@@ -25,12 +26,15 @@ namespace GenericsLab
             list2.Add(3);
             list2.Add(5);
             list2.Add(1);
+            list2.Add(6);
             list2.Subtract();
             list2.ConvertToString();
 
             GenericList<int> CombineList = list1 + list2; //calling + operator overide
             GenericList<int> SubtractList = list1 - list2; //calling - operator override 
-
+            GenericList<int> ZipperList = new GenericList<int>();
+                
+            ZipperList.Zipper(list1, list2);
 
             foreach (var item in list1) //display list one items
             {

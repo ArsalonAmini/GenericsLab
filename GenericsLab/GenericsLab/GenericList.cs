@@ -35,10 +35,11 @@ namespace GenericsLab
         public void Subtract (T itemToSubtract) //method
         {
             T[] tempInnerArrayTwo = new T[internalArray.Length - 1];
-            for (int i = 0; i < internalArray.Length; i ++)
+            for (int i = 0; i < internalArray.Length -1 ; i ++)
             {
                 tempInnerArrayTwo[i] = internalArray[i];
             }
+            //tempInnerArrayTwo[tempInnerArrayTwo.Length - 1] = itemToSubtract; //subtract from last object in array
             internalArray = tempInnerArrayTwo;
         }
 

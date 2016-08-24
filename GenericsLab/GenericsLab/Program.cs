@@ -17,6 +17,8 @@ namespace GenericsLab
             genericListInt.Add(5);
             genericListInt.Add(10);
             genericListInt.Add(15);
+            genericListInt.Subtract(5);
+            genericListInt.Subtract(10);
             Console.ReadLine();
 
 

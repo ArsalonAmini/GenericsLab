@@ -12,13 +12,23 @@ namespace GenericsLab
         static void Main(string[] args)
         {
 
+            
+            GenericList<int> genericListInt = new GenericList<int>();
+            genericListInt.Add(5);
+            genericListInt.Add(10);
+            genericListInt.Add(15);
+            Console.ReadLine();
+
+
             //TestClass <int> testclass = new TestClass <int>();
             //testclass.RunTest();
-            GenericList<int> genericList = new GenericList<int>();
-            genericList.AddObjectToList("cat");
 
-            IterableClass iterable = new IterableClass();
-            iterable.GetEnumerator();
+            //IterableClass iterable = new IterableClass();
+            //foreach (var name in iterable)
+            //{
+            //    //method
+            //}
+            //Console.ReadLine();
         }
 
     }

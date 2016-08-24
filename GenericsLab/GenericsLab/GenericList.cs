@@ -10,28 +10,29 @@ namespace GenericsLab
 
     {
 
-        private T[] internalArray;
+        private T[] internalArray; //declaring variables
         private T[] internalArrayTwo;
  
-        //innerArray = new T[0] //creating an internal array
-
-        public void AddToList()
+        public GenericList()
         {
-            internalArray = new T[0];
+            internalArray = new T[0]; //assigning variables
             internalArrayTwo = new T[0];
         }
-        public void AddObjectToList(string cat) //Method
+
+        public void Add (T itemToAdd) //Tested and verified by A.Amini-Hajibashi on 8/24/2016
         {
-            T[] tempInnerArray = new T[internalArray.Length + 1]; //creating a new array
+            T[] tempInnerArray = new T[internalArray.Length + 1]; 
 
             for (int i = 0; i < internalArray.Length; i++)
             {
-                tempInnerArray[i] = internalArray[i]; //passing in values from old array to new array
+                tempInnerArray[i] = internalArray[i]; 
             }
+            tempInnerArray[tempInnerArray.Length-1] = itemToAdd;
             internalArray = tempInnerArray;
+            
         }
 
-        public void RemoveFromList() //method
+        public void Subtract (T itemToSubtract) //method
         {
             T[] tempInnerArrayTwo = new T[internalArray.Length - 1];
             for (int i = 0; i < internalArray.Length; i ++)

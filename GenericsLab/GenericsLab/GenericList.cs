@@ -34,7 +34,7 @@ namespace GenericsLab
 
         public void Remove (T item) 
         {
-            T[] tempInnerArray = new T[internalArray.Length-1];
+            T[] tempInnerArray = new T[internalArray.Length];
             int j = 0;
             for (int i = 0; i < internalArray.Length -1; i++)
             {

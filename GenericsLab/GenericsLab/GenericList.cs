@@ -11,12 +11,12 @@ namespace GenericsLab
 
     {
 
-        private T[] internalArray; //declaring variables
+        public T[] internalArray; //declaring variables
         string toString;
 
         public GenericList()
         {
-            internalArray = new T[0]; //assigning variables
+            internalArray = new T[10]; //assigning variables
         }
 
         public void Add (T itemToAdd) 
@@ -34,13 +34,19 @@ namespace GenericsLab
 
         public void Remove (T item) 
         {
-            T[] tempInnerArray = new T[internalArray.Length - 1];
+            T[] tempInnerArray = new T[internalArray.Length-1];
+            int j = 0;
             for (int i = 0; i < internalArray.Length -1; i++)
             {
 
-                if (!EqualityComparer<T>.Default.Equals(internalArray[i], item))
+                if (EqualityComparer<T>.Default.Equals(internalArray[i], item))
+                {
                     continue;
-                tempInnerArray[i] = internalArray[i];
+                }
+                else {
+                    tempInnerArray[j] = internalArray[i];
+                    j++;
+                }
             }
             internalArray = tempInnerArray;
         }
@@ -77,22 +83,16 @@ namespace GenericsLab
             return resultList;
         }
 
-        //public static GenericList<T> operator -(GenericList<T> list1, GenericList<T> list2) //Tested and verified by A.Amini-Hajibashi
-        //{
-           
-        //    foreach(T item in list1)
-        //    {
-        //        foreach(T item2 in list2)
-        //        {
-        //            if(item == item2)
-        //            {
-        //                list1.Subtract(item);
-        //            }
-        //        }
-        //        list1 = list2;
-        //    }
-        //    return list1;
-        //}
+        public static GenericList<T> operator -(GenericList<T> list1, GenericList<T> list2)
+        {
+
+            foreach (T item in list2)
+            {
+                list1.Remove(item);
+            }
+
+            return list1;
+        }
 
         public GenericList<T> Zipper(GenericList<T> list1, GenericList<T> list2)
         {

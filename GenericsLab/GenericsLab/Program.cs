@@ -31,7 +31,7 @@ namespace GenericsLab
             list2.ToString();
 
             GenericList<int> CombineList = list1 + list2; //calling + operator overide
-            /*GenericList<int> SubtractList = list1 - list2;*/ //calling - operator override 
+            GenericList<int> SubtractList = list1 - list2;//calling - operator override 
             GenericList<int> ZipperList = new GenericList<int>();
                 
             ZipperList.Zipper(list1, list2);

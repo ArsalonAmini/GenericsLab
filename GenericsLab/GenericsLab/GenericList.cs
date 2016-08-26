@@ -12,16 +12,14 @@ namespace GenericsLab
     {
 
         private T[] internalArray; //declaring variables
-        private T[] internalArrayTwo;
         string toString;
 
         public GenericList()
         {
             internalArray = new T[0]; //assigning variables
-            internalArrayTwo = new T[0];
         }
 
-        public void Add (T itemToAdd) //Tested and verified by A.Amini-Hajibashi on 8/24/2016
+        public void Add (T itemToAdd) 
 
         {
             T[] tempInnerArray = new T[internalArray.Length + 1]; 
@@ -34,18 +32,19 @@ namespace GenericsLab
             internalArray = tempInnerArray;  
         }
 
-        public void Subtract () //Tested and Verified by A.Amini-Hajibashi on 8/24/2016
+        public void Remove (T item) 
         {
-            T[] tempInnerArrayTwo = new T[internalArray.Length - 1];
-            for (int i = 0; i < internalArray.Length -1 ; i ++)
+            T[] tempInnerArray = new T[internalArray.Length - 1];
+            for (int i = 0; i < internalArray.Length -1; i++)
             {
-                tempInnerArrayTwo[i] = internalArray[i];
-            }
-            
-            internalArray = tempInnerArrayTwo;
-        }
 
-        public string ConvertToString() //Tested and Verified by A.Amini-Hajibashi on 8/24/2016
+                if (!EqualityComparer<T>.Default.Equals(internalArray[i], item))
+                    continue;
+                tempInnerArray[i] = internalArray[i];
+            }
+            internalArray = tempInnerArray;
+        }
+        public override string ToString() 
         {
             for (int i = 0; i<internalArray.Length; i++)
             {
@@ -54,7 +53,7 @@ namespace GenericsLab
             return toString;
         }
 
-        public IEnumerator GetEnumerator() //Tested and Verified by A.Amini-Hajibashi
+        public IEnumerator GetEnumerator() 
         {
             for (int i = 0; i < internalArray.Length; i++)
             {
@@ -62,7 +61,7 @@ namespace GenericsLab
             }
         }
 
-        public static GenericList<T> operator +(GenericList<T> list1, GenericList<T> list2) //tested and verified by A.Amini-Hajibashi
+        public static GenericList<T> operator +(GenericList<T> list1, GenericList<T> list2) 
         {
             
             GenericList<T> resultList= new GenericList<T>();
@@ -78,15 +77,22 @@ namespace GenericsLab
             return resultList;
         }
 
-        public static GenericList<T> operator -(GenericList<T> list1, GenericList<T> list2) //Tested and verified by A.Amini-Hajibashi
-        {
+        //public static GenericList<T> operator -(GenericList<T> list1, GenericList<T> list2) //Tested and verified by A.Amini-Hajibashi
+        //{
            
-            foreach(T item in list1)
-            {
-                list1 = list2;
-            }
-            return list1;
-        }
+        //    foreach(T item in list1)
+        //    {
+        //        foreach(T item2 in list2)
+        //        {
+        //            if(item == item2)
+        //            {
+        //                list1.Subtract(item);
+        //            }
+        //        }
+        //        list1 = list2;
+        //    }
+        //    return list1;
+        //}
 
         public GenericList<T> Zipper(GenericList<T> list1, GenericList<T> list2)
         {

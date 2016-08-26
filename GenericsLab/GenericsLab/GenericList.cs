@@ -92,7 +92,7 @@ namespace GenericsLab
         {
             GenericList<T> zippedResult = new GenericList<T>();
  
-            for (int i = 0; i < internalArray.Length; i++)
+            for (int i = 0; i < internalArray.Length + 3; i++)
 
             {
                 zippedResult.Add(list1.internalArray[i]);
